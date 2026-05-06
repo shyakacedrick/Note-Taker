@@ -1,0 +1,182 @@
+/* ===== RESET ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ===== ROOT VARIABLES ===== */
+:root {
+  --primary: #4f46e5;
+  --secondary: #06b6d4;
+  --bg: #0f172a;
+  --card: #1e293b;
+  --text: #e2e8f0;
+  --muted: #94a3b8;
+  --danger: #ef4444;
+}
+
+/* ===== BODY ===== */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #0f172a, #1e293b);
+  color: var(--text);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+/* ===== APP CONTAINER ===== */
+.container {
+  width: 100%;
+  max-width: 800px;
+  padding: 20px;
+  animation: fadeIn 0.8s ease;
+}
+
+/* ===== TITLE ===== */
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 2rem;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ===== FORM ===== */
+form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+/* ===== INPUT ===== */
+input {
+  flex: 1 1 45%;
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  background: var(--card);
+  color: var(--text);
+  transition: 0.3s;
+}
+
+input:focus {
+  transform: scale(1.03);
+  box-shadow: 0 0 10px var(--primary);
+}
+
+/* ===== BUTTON ===== */
+button {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  background: var(--primary);
+  color: white;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  background: var(--secondary);
+}
+
+/* ===== LIST ===== */
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* ===== CARD ===== */
+.card {
+  background: var(--card);
+  padding: 15px;
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  animation: slideUp 0.4s ease;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+/* ===== DELETE BUTTON ===== */
+.delete-btn {
+  background: var(--danger);
+}
+
+.delete-btn:hover {
+  background: #dc2626;
+}
+
+/* ===== TEXT ===== */
+.card span {
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===== RESPONSIVE ===== */
+
+/* Tablet */
+@media (max-width: 768px) {
+  .container {
+    padding: 15px;
+  }
+
+  h2 {
+    font-size: 1.7rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  form {
+    flex-direction: column;
+  }
+
+  input {
+    flex: 1 1 100%;
+  }
+
+  button {
+    width: 100%;
+  }
+
+  .card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+}
