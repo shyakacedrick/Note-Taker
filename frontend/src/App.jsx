@@ -32,7 +32,10 @@ function App() {
 
 return (
   <div className="container">
-    <h2>Phonebook</h2>
+   <div className='header'>
+     <h2>Phonebook</h2>
+     <span><i>Brought to you by Ceddy</i></span>
+   </div>
 
     <form onSubmit={addPerson}>
       <input
